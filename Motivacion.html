@@ -1,0 +1,71 @@
+<html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Psicología fácil - Motivación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f7f7fb; color:#222; }
+    header { background:#fff; border-bottom:1px solid #ddd; padding:12px; display:flex; gap:12px; align-items:center; }
+    h1 { margin:0; color:#3b5bdb; }
+    nav { margin-left:auto; display:flex; gap:8px; }
+    nav a.activo { background:#3b5bdb; color:#fff; padding:6px 10px; border-radius:6px; }
+    main { max-width:820px; margin:20px auto; padding:0 16px; }
+    .tarjeta { background:#fff; border:1px solid #ddd; border-radius:10px; padding:16px; margin:16px 0; }
+    input { display:block; width:100%; max-width:420px; padding:8px; margin:6px 0; border:1px solid #ddd; border-radius:6px; }
+    button { background:#3b5bdb; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+    footer { text-align:center; padding:16px; color:#666; }
+    .suave { color:#666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Psicología fácil</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="emociones.html">Emociones</a>
+      <a href="memoria.html">Memoria</a>
+      <a href="motivacion.html" class="activo">Motivación</a>
+      <a href="personalidad.html">Personalidad</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Motivación</h2>
+    <p>La motivación nos impulsa a actuar. Pequeñas metas ayudan mucho.</p>
+
+    <section class="tarjeta">
+      <h3>Meta del día</h3>
+      <input id="meta" type="text" placeholder="Escribe una meta simple">
+      <button id="guardarMeta">Guardar</button>
+      <p id="salidaMeta" class="suave"></p>
+    </section>
+  </main>
+
+  <footer>
+    <small id="fecha">Fecha de hoy: </small>
+  </footer>
+
+  <script>
+    var campoFecha = document.getElementById('fecha');
+    var boton = document.getElementById('guardarMeta');
+    var salida = document.getElementById('salidaMeta');
+
+    // Fecha
+    var hoy = new Date();
+    campoFecha.textContent = 'Fecha de hoy: ' + hoy.toLocaleDateString('es-MX');
+
+    // Guardar meta simple
+    function guardarMeta() {
+      var texto = document.getElementById('meta').value.trim();
+      if (texto !== '') {
+        salida.textContent = 'Tu meta de hoy: ' + texto;
+      } else {
+        salida.textContent = 'Escribe una meta simple.';
+      }
+    }
+
+    if (boton) { boton.addEventListener('click', guardarMeta); }
+  </script>
+</body>
+</html>

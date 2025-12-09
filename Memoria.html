@@ -1,0 +1,81 @@
+<html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Psicología fácil - Memoria</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f7f7fb; color:#222; }
+    header { background:#fff; border-bottom:1px solid #ddd; padding:12px; display:flex; gap:12px; align-items:center; }
+    h1 { margin:0; color:#3b5bdb; }
+    nav { margin-left:auto; display:flex; gap:8px; }
+    nav a.activo { background:#3b5bdb; color:#fff; padding:6px 10px; border-radius:6px; }
+    main { max-width:820px; margin:20px auto; padding:0 16px; }
+    .tarjeta { background:#fff; border:1px solid #ddd; border-radius:10px; padding:16px; margin:16px 0; }
+    input { display:block; width:100%; max-width:420px; padding:8px; margin:6px 0; border:1px solid #ddd; border-radius:6px; }
+    button { background:#3b5bdb; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+    footer { text-align:center; padding:16px; color:#666; }
+    .suave { color:#666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Psicología fácil</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="emociones.html">Emociones</a>
+      <a href="memoria.html" class="activo">Memoria</a>
+      <a href="motivacion.html">Motivación</a>
+      <a href="personalidad.html">Personalidad</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Memoria</h2>
+    <p>La memoria guarda y recupera información. Practica con ejercicios simples.</p>
+
+    <section class="tarjeta">
+      <h3>Ejercicio</h3>
+      <p>Escribe tres cosas que quieras recordar hoy:</p>
+      <input id="n1" type="text" placeholder="Nota 1">
+      <input id="n2" type="text" placeholder="Nota 2">
+      <input id="n3" type="text" placeholder="Nota 3">
+      <button id="guardar">Guardar</button>
+      <p id="salida" class="suave"></p>
+    </section>
+  </main>
+
+  <footer>
+    <small id="fecha">Fecha de hoy: </small>
+  </footer>
+
+  <script>
+    // Variables simples
+    var campoFecha = document.getElementById('fecha');
+    var botonGuardar = document.getElementById('guardar');
+    var salida = document.getElementById('salida');
+
+    // Poner fecha
+    var hoy = new Date();
+    campoFecha.textContent = 'Fecha de hoy: ' + hoy.toLocaleDateString('es-MX');
+
+    // Función simple para guardar notas (solo muestra en pantalla)
+    function guardarNotas() {
+      var a = document.getElementById('n1').value.trim();
+      var b = document.getElementById('n2').value.trim();
+      var c = document.getElementById('n3').value.trim();
+      var lista = [];
+      if (a !== '') { lista.push(a); }
+      if (b !== '') { lista.push(b); }
+      if (c !== '') { lista.push(c); }
+      if (lista.length > 0) {
+        salida.textContent = 'Notas: ' + lista.join(' • ');
+      } else {
+        salida.textContent = 'Escribe al menos una nota.';
+      }
+    }
+
+    if (botonGuardar) { botonGuardar.addEventListener('click', guardarNotas); }
+  </script>
+</body>
+</html>

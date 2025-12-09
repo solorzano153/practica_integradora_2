@@ -1,0 +1,56 @@
+<html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Psicología fácil - Emociones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f7f7fb; color:#222; }
+    header { background:#fff; border-bottom:1px solid #ddd; padding:12px; display:flex; gap:12px; align-items:center; }
+    h1 { margin:0; color:#3b5bdb; }
+    nav { margin-left:auto; display:flex; gap:8px; }
+    nav a.activo { background:#3b5bdb; color:#fff; padding:6px 10px; border-radius:6px; }
+    main { max-width:820px; margin:20px auto; padding:0 16px; }
+    .tarjeta { background:#fff; border:1px solid #ddd; border-radius:10px; padding:16px; margin:16px 0; }
+    footer { text-align:center; padding:16px; color:#666; }
+    .suave { color:#666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Psicología fácil</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="emociones.html" class="activo">Emociones</a>
+      <a href="memoria.html">Memoria</a>
+      <a href="motivacion.html">Motivación</a>
+      <a href="personalidad.html">Personalidad</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Emociones</h2>
+    <p>Las emociones son reacciones que sentimos en el cuerpo y la mente.</p>
+
+    <section class="tarjeta">
+      <h3>Consejos</h3>
+      <ul>
+        <li>Respira y cuenta hasta 4.</li>
+        <li>Di en voz alta lo que sientes.</li>
+        <li>Busca apoyo si lo necesitas.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small id="fecha">Fecha de hoy: </small>
+  </footer>
+
+  <script>
+    // Variable simple para la fecha
+    var campoFecha = document.getElementById('fecha');
+    var hoy = new Date();
+    campoFecha.textContent = 'Fecha de hoy: ' + hoy.toLocaleDateString('es-MX');
+  </script>
+</body>
+</html>
